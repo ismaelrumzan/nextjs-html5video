@@ -4,11 +4,9 @@ import React from "react";
 
 export default function Home() {
   const videoRef = React.useRef();
-  const [data, setData] = React.useState(null);
   const [isError, setError] = React.useState(false);
   const [isLoading, setLoading] = React.useState(false);
   const [videourl, setVideourl] = React.useState("");
-  const [videoLoading, setVideoLoading] = React.useState(false);
 
   React.useEffect(() => {
     videoRef.current?.load();
@@ -16,12 +14,9 @@ export default function Home() {
 
   React.useEffect(() => {
     console.log("fetching");
-    fetch(
-      `https://mahad-al-tafsir.herokuapp.com/getYT?id=9Vj8tSVrabk&key=AIzaSyD2ZCJfeVdMeutMVNcq_IXrWPI37_Kx6HM`
-    )
+    fetch(`https://mahad-al-tafsir.herokuapp.com/getYT?id=9Vj8tSVrabk`)
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
         setLoading(false);
         if (data.data[0].url) {
           setVideourl(data.data[0].url);
@@ -34,7 +29,6 @@ export default function Home() {
   }, []);
   if (isError) return <div>failed to load video</div>;
 
-  console.log(videourl);
   return (
     <div className={styles.container}>
       <Head>
