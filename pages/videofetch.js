@@ -9,10 +9,6 @@ export default function Home() {
   const [videourl, setVideourl] = React.useState("");
 
   React.useEffect(() => {
-    videoRef.current?.load();
-  }, [videourl]);
-
-  React.useEffect(() => {
     console.log("fetching");
     fetch(`https://mahad-al-tafsir.herokuapp.com/getYT?id=9Vj8tSVrabk`)
       .then((res) => res.json())
