@@ -14,7 +14,6 @@ export default function Home() {
           src="https://tafsir-institute.s3.eu-central-1.amazonaws.com/mabadi.mp4"
           type="video/mp4"
         />
-        Sorry, your browser doesn't support embedded videos.
       </video>
     </div>
   );

@@ -49,7 +49,6 @@ export default function Home() {
           onLoadStart={() => console.log("video loading started")}
         >
           <source src={videourl} type="video/mp4" />
-          Sorry, your browser doesn't support embedded videos.
         </video>
       )}
     </div>
